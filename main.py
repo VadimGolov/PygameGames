@@ -1,5 +1,5 @@
 import pygame
-import random
+from random import choice
 
 # Инициализация Pygame
 pygame.init()
@@ -9,7 +9,7 @@ WIDTH, HEIGHT = 300, 600
 BLOCK_SIZE = 30
 COLUMNS = WIDTH // BLOCK_SIZE
 ROWS = HEIGHT // BLOCK_SIZE
-FPS = 3
+FPS = 2
 
 # Цвета
 BLACK = (0, 0, 0)
@@ -45,8 +45,8 @@ class Tetris:
 
     @classmethod
     def new_shape(cls):
-        shape = random.choice(SHAPES)
-        color = random.choice(COLORS)
+        shape = choice(SHAPES)
+        color = choice(COLORS)
         return Shape(shape, color)
 
     def draw_grid(self):
